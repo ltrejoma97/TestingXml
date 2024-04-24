@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/list"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:clipToPadding="false"
-    android:paddingTop="@dimen/list_item_spacing_half"
-    android:paddingBottom="@dimen/list_item_spacing_half"
-    tools:context=".presentation.QrScanDialogFragment"
-    tools:listitem="@layout/fragment_qr_scan_dialog_list_dialog_item" />
+    android:orientation="vertical"
+    android:background="@color/letterColor"
+    android:layout_height="400dp"
+    >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_straighten_24" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="@string/qr_string"
+        android:layout_height="wrap_content" />
+</LinearLayout>

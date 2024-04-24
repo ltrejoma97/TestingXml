@@ -1,5 +1,6 @@
 package com.example.joujonaapp.presentation
 
+import android.app.Dialog
 import android.os.Bundle
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,6 +12,8 @@ import android.widget.TextView
 import com.example.joujonaapp.R
 import com.example.joujonaapp.databinding.FragmentQrScanDialogListDialogItemBinding
 import com.example.joujonaapp.databinding.FragmentQrScanDialogListDialogBinding
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 
 class QrScanDialogFragment : RoundedBottomSheetDialogFragment() {
@@ -18,22 +21,17 @@ class QrScanDialogFragment : RoundedBottomSheetDialogFragment() {
     lateinit var binding: FragmentQrScanDialogListDialogBinding
 
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         binding = FragmentQrScanDialogListDialogBinding.inflate(inflater, container, false)
+//        configureFragment()
+
         return binding.root
 
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        activity?.findViewById<RecyclerView>(R.id.list)?.layoutManager =
-            LinearLayoutManager(context)
-
-    }
 
 
     companion object {
@@ -43,11 +41,38 @@ class QrScanDialogFragment : RoundedBottomSheetDialogFragment() {
                 arguments = Bundle().apply {
                 }
             }
+
         const val QR_SCAN_FRAGMENT = "qr scan fragment"
 
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
+    }
+
+    private fun configureFragment() {
+        val offsetFromTop = 500
+
+        (dialog as? BottomSheetDialog)?.behavior?.apply {
+            this.isDraggable = false
+            isFitToContents = true
+            expandedOffset = offsetFromTop
+            maxHeight = 400
+            state = BottomSheetBehavior.STATE_HIDDEN
+        }
+
+    }
+
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        // used to show the bottom sheet dialog
+        dialog?.setOnShowListener { it ->
+            val d = it as BottomSheetDialog
+            val bottomSheet = d.findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)
+            bottomSheet?.let {
+                val behavior = BottomSheetBehavior.from(it)
+                behavior.state = BottomSheetBehavior.STATE_EXPANDED
+            }
+        }
+        return super.onCreateDialog(savedInstanceState)
     }
 }
