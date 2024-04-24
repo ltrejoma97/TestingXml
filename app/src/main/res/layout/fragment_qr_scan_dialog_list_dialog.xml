@@ -4,18 +4,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:background="@color/lightBackgroundColor"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    android:background="@color/lightBackgroundColor"
     >
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingTop="40dp"
         android:src="@drawable/baseline_straighten_24" />
 
     <TextView
+        style="@style/regular_34_text"
         android:layout_width="match_parent"
-        android:text="@string/qr_string"
-        android:layout_height="wrap_content" />
+        android:layout_height="112dp"
+        android:gravity="center"
+        android:text="@string/qr_string" />
 </LinearLayout>
