@@ -1,6 +1,7 @@
 package com.example.joujonaapp.presentation.homefragment
 
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.joujonaapp.HomeFragment
 import com.example.joujonaapp.R
 import com.example.joujonaapp.presentation.QrScanDialogFragment
@@ -27,4 +28,11 @@ fun HomeFragment.displayQrDialog() {
 
     dialog.setContentView(bottomSheet)
     dialog.show()
+    dialog.setOnDismissListener {
+        navigateToListFragment()
+        }
     }
+
+fun HomeFragment.navigateToListFragment(){
+    findNavController().navigate(R.id.action_homeFragment_to_itemFragment)
+}

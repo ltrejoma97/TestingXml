@@ -13,7 +13,6 @@ import androidx.compose.material3.Text
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import com.example.joujonaapp.R
-import com.example.joujonaapp.databinding.FragmentQrScanDialogListDialogItemBinding
 import com.example.joujonaapp.databinding.FragmentQrScanDialogListDialogBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
