@@ -10,4 +10,8 @@
         android:name="com.example.joujonaapp.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+    <dialog
+        android:id="@+id/qrScanDialogFragment"
+        android:name="com.example.joujonaapp.presentation.QrScanDialogFragment"
+        android:label="QrScanDialogFragment" />
 </navigation>

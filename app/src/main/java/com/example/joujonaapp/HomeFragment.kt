@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.joujonaapp.databinding.FragmentHomeBinding
-import com.example.joujonaapp.databinding.FragmentQrScanDialogListDialogBinding
 import com.example.joujonaapp.presentation.homefragment.displayQrDialog
 
 
@@ -14,11 +13,16 @@ class HomeFragment : Fragment() {
     lateinit var binding : FragmentHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         arguments?.let {
 
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,6 +30,7 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         displayQrDialog()
+
         return binding.root
     }
 

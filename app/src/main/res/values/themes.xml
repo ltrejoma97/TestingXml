@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.JouJonaApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-         <item name="colorPrimary">@color/primaryBackgroundColor</item>
-         <item name="android:background">@color/primaryBackgroundColor</item>
+<!--         <item name="colorPrimary">@color/primaryBackgroundColor</item>-->
+<!--         <item name="android:background">@color/lightBackgroundColor</item>-->
          <item name="android:textColor">@color/letterColor</item>
          <item name="fontFamily">@font/siemens_sans_bold</item>
     </style>
@@ -46,6 +46,7 @@
 
     <style name="BaseBottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
         <item name="android:windowIsFloating">false</item>
+
         <item name="bottomSheetStyle">@style/BottomSheet</item>
     </style>
     <style name="BottomSheet" parent="Widget.Design.BottomSheet.Modal">
