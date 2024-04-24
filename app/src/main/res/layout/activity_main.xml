@@ -1,10 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24.dp"
+        android:layout_marginTop="40.dp"
+        android:gravity="center_vertical">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="0.5">
+            <ImageButton
+                android:background="@color/primaryBackgroundColor"
+                android:id="@+id/calendar_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_calendar">
+            </ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                style="@style/regular_16_text"
+                android:layout_height="wrap_content"
+                android:text="21 Mar" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="horizontal">
+            <ImageButton
+                android:background="@color/primaryBackgroundColor"
+                android:id="@+id/clock_ic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_calendar">
+            </ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                style="@style/regular_16_text"
+                android:layout_height="wrap_content"
+                android:text="12:00" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
 
     <androidx.fragment.app.FragmentContainerView
         android:layout_width="match_parent"
@@ -13,10 +67,5 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         app:defaultNavHost="true"
         app:navGraph="@navigation/main_graph"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

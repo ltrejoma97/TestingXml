@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 
 
+
 class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,20 +25,14 @@ class HomeFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
-
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters or for test with expresso.
-         *
 
-         * @return A new instance of fragment HomeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             HomeFragment().apply {
+                arguments = Bundle().apply {
 
+                }
             }
     }
 }
