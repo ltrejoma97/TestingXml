@@ -5,5 +5,7 @@
     <string name="hello_jou_na">Hello, Jonathan</string>
     <string name="qr_string">Click here to scan your location QR Code</string>
     <string name="jonathan">Jonathan</string>
+    <string name="date">21 Mar</string>
+    <string name="hour">12:00</string>
 
 </resources>
